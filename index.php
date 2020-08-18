@@ -8,14 +8,17 @@
 <div class="container p-4">
     <div class="row">
         <div class="col-md-4">
-            <?php if (isset($_SESSION['message'])) { ?>
-                <div class="alert alert-<?=$_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
-                    <strong><?php= $_SESSION['message'] ?></strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            <?php session_unset(); } ?>
+            <div class="container">
+                <?php if (isset($_SESSION['message'])) { ?>
+                    <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show" role="alert">
+                        <?= $_SESSION['message'] ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                <?php session_unset();
+                } ?>
+            </div>
             <div class="card-body">
                 <form action="save_task.php" method="POST">
                     <div class="form-group">
@@ -27,6 +30,38 @@
                     <input type="submit" name="save-task" value="success" class="btn btn-success btn-block">
                 </form>
             </div>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
