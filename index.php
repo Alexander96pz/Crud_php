@@ -40,6 +40,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Task description</th>
                         <th scope="col">Created at</th>
+                        <th scope="col">Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,10 +49,12 @@
                         $result_query=mysqli_query($conn,$query);
                         while ($row=mysqli_fetch_array($result_query)) { ?>
                         <tr>
-                            <th scope="row"><?php echo $row["id"] ?> </th>
+                            <th scope="row"><?php echo $row["id"]?> </th>
                             <td> <?php echo $row["title"]?></td>
                             <td> <?php echo $row["description"]?></td>
                             <td> <?php echo $row["created_at"]?></td>
+                            <td> <a href="edit.php?id=<?php echo $row["id"]?>" class="btn btn-secondary"><i class="fas fa-edit"></i></a></td>
+                            <td> <a href="delete_task.php?id=<?php echo $row["id"]?>" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></a></td>                
                         </tr>
                         <?php
                         } ?>
