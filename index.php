@@ -10,12 +10,12 @@
         <div class="col-md-4">
             <div class="container">
                 <?php if (isset($_SESSION['message'])) { ?>
-                    <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show" role="alert">
-                        <?= $_SESSION['message'] ?>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show" role="alert">
+                    <?= $_SESSION['message'] ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <?php session_unset();
                 } ?>
             </div>
@@ -25,7 +25,8 @@
                         <input type="text" placeholder="task title" name="title" class="form-control" autofocus>
                     </div>
                     <div class="form-group">
-                        <textarea rows="2" placeholder="task description" name="description" class="form-control"></textarea>
+                        <textarea rows="2" placeholder="task description" name="description"
+                            class="form-control"></textarea>
                     </div>
                     <input type="submit" name="save-task" value="success" class="btn btn-success btn-block">
                 </form>
@@ -36,30 +37,24 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Task description</th>
+                        <th scope="col">Created at</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    <?php 
+                        $query = "SELECT * from task";
+                        $result_query=mysqli_query($conn,$query);
+                        while ($row=mysqli_fetch_array($result_query)) { ?>
+                        <tr>
+                            <th scope="row"><?php echo $row["id"] ?> </th>
+                            <td> <?php echo $row["title"]?></td>
+                            <td> <?php echo $row["description"]?></td>
+                            <td> <?php echo $row["created_at"]?></td>
+                        </tr>
+                        <?php
+                        } ?>
                 </tbody>
             </table>
         </div>
