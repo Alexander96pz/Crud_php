@@ -11,3 +11,8 @@
     <script src="https://kit.fontawesome.com/54898b3b40.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <a href="index.php" class="navbar-brand">PHP MYSQL CRUD</a>
+    </div>
+</nav>

@@ -1,16 +1,11 @@
 <?php include("db.php") ?>
 <?php include("includes/header.php") ?>
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-        <a href="index.php" class="navbar-brand">PHP MYSQL CRUD</a>
-    </div>
-</nav>
 <div class="container p-4">
     <div class="row">
         <div class="col-md-4">
             <div class="container">
                 <?php if (isset($_SESSION['message'])) { ?>
-                <div class="alert alert-<?= $_SESSION['message_type'] ?> alert-dismissible fade show" role="alert">
+                <div class="alert alert-<?= $_SESSION['message_color'] ?> alert-dismissible fade show" role="alert">
                     <?= $_SESSION['message'] ?>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

@@ -9,7 +9,7 @@ if (isset($_POST['save-task'])) {
         die("fallido");
     } else {
         $_SESSION['message'] = 'Task Saved Successfully';
-        $_SESSION['message_type'] = 'success';
+        $_SESSION['message_color'] = 'success';
         header("Location: index.php");
     }
 }
