@@ -12,7 +12,7 @@ $conn = mysqli_connect(
  if (isset($conn)) {
     echo "DB conect";
 }else{
-    echo "No contect"
-}
+    echo "No contect";
+};
 
 ?>
