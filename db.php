@@ -9,8 +9,10 @@ $conn = mysqli_connect(
     "bzioh9m4vwvoshn9oebr"
 );
 
-/* if (isset($conn)) {
+ if (isset($conn)) {
     echo "DB conect";
-} */
+}else{
+    echo "No contect"
+}
 
 ?>
