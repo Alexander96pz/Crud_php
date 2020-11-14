@@ -3,10 +3,10 @@
 session_start();
 
 $conn = mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "crud_php"
+    "bzioh9m4vwvoshn9oebr-mysql.services.clever-cloud.com",
+    "u0hzf4t3vypi4gaa",
+    "8KoYYAznhQXfnXpR8Kv6",
+    "bzioh9m4vwvoshn9oebr"
 );
 
 /* if (isset($conn)) {
